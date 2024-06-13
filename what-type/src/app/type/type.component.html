@@ -1,0 +1,13 @@
+
+<a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Go Back</a>
+<h1>All {{type}} Pokemon</h1>
+<div id="box" #box>
+  <mat-grid-list [cols]="columns" rowHeight="100px" width="100%" (window:resize)="onGridResize()">
+    <mat-grid-tile *ngFor="let pokemon of typeInfo.pokemonList" style="background-color: green; width: 100px;">
+      <h3 style="position:absolute;top:0px;">{{pokemon.name}}</h3>
+      <img src={{pokemon.imageLink}} alt={{pokemon.name}} style="width:50px;height:50px;position:absolute;bottom:10px;">
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<h2>{{typeInfo.description}}</h2>

@@ -1,0 +1,19 @@
+<h1>Select The Type</h1>
+
+<form>
+  <mat-form-field>
+    <mat-label>Select Type</mat-label>
+    <select matNativeControl [(ngModel)]="selected_type" name="type.value">
+      <option value="" selected></option>
+      @for (type of types; track type) {
+        <option [value]="type.value">{{type.viewValue}}</option>
+      }
+    </select>
+  </mat-form-field>
+</form>
+
+<nav>
+  <ul>
+    <li><a routerLink="/type-component/{{selected_type}}" routerLinkActive="active" ariaCurrentWhenActive="page">Type Component</a></li>
+  </ul>
+</nav>
