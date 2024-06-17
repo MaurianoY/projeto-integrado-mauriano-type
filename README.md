@@ -18,3 +18,12 @@ The Angular framework also supports normal HTML and CSS page creation, but with 
 
 #### Typescript
 Typescript is an extension from Javascript that uses strongly typed variabled instead of "duck type" variables. These are very important for code readability, since their behavior is predictable. Without strongly typed variables, a function argument, return type or local variable can assume any type depending on the implementation, which is a nightmare for API consumers.
+
+### Project Components
+The project is devided mostly into two components. These components can be understood as web pages (or Angular routes) and serve these webpages through their logic
+
+#### Home Page
+The Home Page contains a drop down menu that have the Pokemon Type Combinations. 
+
+#### Type Display
+The Type Display route displays all Pokemon from a certain type. It interacts with the Home Page by requesting a type combination string as a url param. This param is read by a hashmap and converted into a list of pokemon.
