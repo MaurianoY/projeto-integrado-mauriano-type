@@ -27,3 +27,21 @@ The Home Page contains a drop down menu that have the Pokemon Type Combinations.
 
 #### Type Display
 The Type Display route displays all Pokemon from a certain type. It interacts with the Home Page by requesting a type combination string as a url param. This param is read by a hashmap and converted into a list of pokemon.
+
+## Validation
+The following section contains information about how the project can be validated in order to guarantee that the correct behavior is being displayed.
+
+### Manual Validation
+Currently, the main way to verify that the system is working as intended is to deploy it as a local instance and verify its behavior manually. This manual test consists of selecting a type on the Home Page and manually validating the Pokemon List. This method of testing is not scalable and is considered "toil", which is a repeatable low value task that can be automated.
+
+### Automatic Validation
+The main strategy for the testing plan is to allow for an automatic test suite. This would validate that every component is working as expected. The validation will be made in layers.
+
+#### Unit Tests
+The unit tests will test basic logic, usually contained within a single function at a time. It is the most basic type of test. Every function should be tested with this. These tests should be quick and not flaky.
+
+#### UI Tests
+The UI tests will be very important to verify if all components are in the correct place. These tasks usually take longer to execute, but not that much since not all components need to run in order for this type of test to work.
+
+#### Integrated Tests
+Finally, the integrated tests will join the UI and the main logic. The integrated tests simulate a real environment and test if all the components are in the correct place and have the correct data. These tests take a lot of time to run, so they should be ran on a separate pipeline.
